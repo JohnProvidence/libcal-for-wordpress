@@ -1,0 +1,391 @@
+.event-listing-title {
+	padding: 2rem;
+	color: $pink;
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+.featured-events__wrapper.grid {
+	display:flex;
+	flex-flow:row wrap;
+	justify-content:top;
+	padding-left:2.5rem;
+	padding-right:2.5rem;
+	padding-bottom:2rem;
+
+	@include tablet-portrait {
+		padding-left:1rem;
+		padding-right:1rem;
+	}
+
+	h2.p-e_header {
+		width:100%;
+		margin-left:1rem;
+		font-weight:700;
+		color:$pink;
+	}
+
+	.featured_event {
+		width:calc(33.3% - 1.5rem);
+		margin:.75rem;
+		padding-bottom:1rem;
+		background:$orange;
+		-webkit-box-shadow: 0px -2px 24px -1px rgba(0,0,0,0.35);
+		-moz-box-shadow: 0px -2px 24px -1px rgba(0,0,0,0.35);
+		box-shadow: 0px -2px 24px -1px rgba(0,0,0,0.35);
+		position:relative;
+
+		@include tablet-landscape {
+			width:calc(50% - 1rem);
+			margin:.5rem;
+		}
+
+		@include mobile {
+			width:calc(100% - 1.5rem);
+			margin:.75rem;
+		}
+
+		.featured_image {
+			width:100%;
+			height:400px;
+			background-repeat:no-repeat;
+			background-size:cover;
+			background-position:center center;
+			transition:opacity .6s ease;
+			&:hover {
+				opacity:.7;
+			}
+
+			@include mobile {
+				height:250px;
+			}
+		}
+
+		div.event_date {
+			position:absolute;
+			width:auto;
+			padding:.5rem;
+			background:$pink;
+			color:#fff;
+			top:-5px;
+			left:-5px;
+			-webkit-box-shadow: 0 17px 5px -7px rgba(0,0,0,0.25);
+			-moz-box-shadow:  0 17px 5px -7px rgba(0,0,0,0.25);
+			box-shadow: 0 17px 5px -7px rgba(0,0,0,0.25);
+			text-align:center;
+		}
+		
+		.event-details__wrapper {
+      		position: absolute;
+      		bottom: 0;
+      		left: 0;
+      		right: 0;
+      		background: rgba($orange, .8);
+      		z-index: 2;
+      		height: 50%;
+      		overflow: hidden;
+      		margin-top: .5rem;
+    
+
+      		h3 {
+      			padding: 0 2rem;
+      			white-space: normal;
+      			margin-top: .5rem;
+      			color: #fff;
+      			border-bottom: solid thin #fff;
+
+      			a {
+      				color: #fff;
+      			}
+      		}
+
+      		div.date {
+      			padding-left: 2rem;
+      			color: #fff;
+      			font-size: 1.2rem;
+      			i {
+      				margin-right: .5rem;
+      				color: #fff;
+      			}
+      		}
+
+      		.event-details-btn {
+      			position: absolute;
+      			bottom: 0;
+      			left: 0;
+      			right: 0;
+      			padding: 1rem;
+      			background: $pink;
+      			color: #fff;
+      			font-size: 1.5rem;
+      			text-align: center;
+      			overflow: hidden;
+      			transition: all .3s ease-in-out;
+      			opacity: 0;
+
+      			&:hover {
+      				padding-left: 4rem;
+      			}
+      		}
+		
+      	}
+		
+	}
+
+	.featured_event:hover {
+		a.event-details-btn {
+			opacity: 10;
+		}
+	}
+}
+
+/** Scrolling list styles **/
+
+.featured-events-list__wrapper.scrolling {
+	width: 99%;
+	height: 700px;
+	margin-right: 3rem;
+	overflow: hidden;
+	-webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+
+    @include mobile() {
+      width: 92%;
+      height: 500px;
+    }
+ 
+    ul#events-listing {
+      overflow-y: hidden;
+      overflow-x: hidden;
+      width: 100%;
+      min-width: 100%;
+      white-space: nowrap;
+      height: 92%;
+      padding: 2rem;
+      margin: 0;
+      position: relative;
+      margin-bottom: 3rem;
+      cursor: move !important;
+
+      li.featured_event {
+      	width: 400px;
+      	display: inline-block;
+      	position:relative;
+      	height: 100%;
+      	min-height: 500px;
+      	margin: 1rem 2rem;
+      	-webkit-box-shadow: 0px -2px 24px -1px rgba(0,0,0,0.35);
+		    -moz-box-shadow: 0px -2px 24px -1px rgba(0,0,0,0.35);
+		    box-shadow: 0px -2px 24px -1px rgba(0,0,0,0.35);
+		    transition: all .3s ease-in-out;
+        background-color: $orange;
+
+    @include tablet-portrait() {
+      width: 300px;
+      background: $orange;
+    }
+
+    @include mobile() {
+      min-height: 0;
+    }
+
+		.event_date {
+			position: absolute;
+			z-index: 20;
+			background: $pink;
+			color: #fff;
+			padding: .5rem;
+			text-align: center;
+			top: -15px;
+			left: -15px;
+			font-size: 1.2rem;
+		}
+
+      	.featured_image {
+      		position: absolute;
+      		top: 0;
+      		bottom: 0;
+      		right: 0;
+      		left: 0;
+      		background-position: center center;
+      		background-size: cover;
+      		z-index: 1;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: 0px 0px;
+          height: 50%;
+          overflow: hidden;
+
+          @include tablet-portrait() {
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            z-index: 1;
+          }
+      	}
+
+      	.event-details__wrapper {
+      		position: absolute;
+      		bottom: 0;
+      		left: 0;
+      		right: 0;
+      		background: rgba($orange, .8);
+      		z-index: 2;
+      		height: 50%;
+      		overflow: hidden;
+    
+
+      		h3 {
+      			padding: 0 2rem;
+      			white-space: normal;
+      			margin-top: .5rem;
+            margin-bottom: .5rem;
+      			
+      			a {
+      				color: #fff;
+      				font-weight: 500;
+      				border-bottom: solid thin #fff;
+      			}
+      		}
+
+      		div.date {
+      			padding-left: 2rem;
+      			color: #fff;
+      			font-size: 1.2rem;
+      			i {
+      				margin-right: .5rem;
+      			}
+      		}
+
+      		.event-details-btn {
+      			position: absolute;
+      			bottom: 0;
+      			left: 0;
+      			right: 0;
+      			padding: 1rem;
+      			background: $pink;
+      			color: #fff;
+      			font-size: 1.5rem;
+      			text-align: center;
+      			overflow: hidden;
+      			transition: all .3s ease-in-out;
+      			opacity: 0;
+
+      			&:hover {
+      				padding-left: 4rem;
+      			}
+
+            @include mobile() {
+              padding: .5rem;
+              font-size: 1rem;
+            }
+      		}
+		
+      	}
+      }
+      li.featured_event:hover {
+		transform: translate(-0px,-20px);
+
+		.event-details-btn {
+			opacity: 10;
+		}
+      }
+    }
+}
+
+.iScrollHorizontalScrollbar {
+      height: 25px;
+      background: $adminBlue;
+      width: 95%;
+      border-radius: 4px;
+      position: absolute;
+      overflow: hidden;
+      bottom: 1rem;
+      left: 2rem;
+      right: 2rem;
+      z-index:9999;
+      padding: .15rem;
+    }
+
+.iScrollHorizontalScrollbar .iScrollIndicator {
+  background: $pink;
+  height: 20px;
+  width: 75px;
+  border-radius: 4px;
+  position:absolute;
+  transition-duration: 0ms; 
+  transform: translate(0px, 0px) translateZ(0px); 
+  transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+  cursor: move !important; 
+}
+
+.event-list-full-calendar-btn {
+	margin-top: 2rem;
+	padding: 1rem 0;
+	border-bottom:solid 3px $pink;
+	position: relative;
+	text-align: right;
+	transition: all .3s ease-in-out;
+	background: rgba($adminBlue, .3);
+
+	a {
+		display: block;
+		text-align: right;
+		width: auto;
+		color: $pink;
+		font-size: 2rem;
+		margin-right: 180px;
+
+    @include tablet-portrait() {
+      font-size: 1.5rem;
+    }
+	}
+
+
+	span.right-angle {
+		width: 170px;
+		height: 100%;
+		background: $pink;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0px;
+		-webkit-clip-path: polygon(36% 0, 100% 0, 100% 100%, 0% 100%);
+		clip-path: polygon(36% 0, 100% 0, 100% 100%, 0% 100%);
+		transition: all .3s ease-in-out;
+		text-align: center;
+		font-size: 2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		i {
+			color: #fff;
+			display: flex;
+			align-self: center;
+		}
+	}
+
+	&:hover {
+		background: rgba($pink, .3);
+		span.right-angle {
+			width:150px;
+		}
+		a {
+			color: $pink;
+		}
+	}
+}

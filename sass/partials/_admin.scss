@@ -1,0 +1,379 @@
+/*  main admin elements */
+
+div[class*="lcwp-calendar__"] {
+
+	h1, h2, h3, h4, h5, h6 {
+		line-height:1.5;
+	}
+	
+	.btn {
+		display:block;
+		border:solid thin transparent;
+		text-align:center;
+		border-radius:4px;
+		color:#fff;
+		transition:all .3s ease-in;
+		cursor:pointer;
+		text-decoration:none;
+		text-align: center;
+	}
+
+	.admin-btn {
+		@extend .btn;
+		background:#0073AA;
+		margin-top:1.5rem;
+		margin-bottom: 2.5rem;
+		font-size:13px;
+		max-width:200px;
+		text-align:center !important;
+		&:hover {
+			background:darken(#0073AA, 20%);
+		}
+	}
+
+
+	.tab-content__wrapper {
+		padding:1rem 0;
+		p {
+			font-size:1rem;
+		}
+		.tabs {
+			border-bottom:solid thin #00496B;
+			span.toggle-tab {
+				padding:.5rem 1rem;
+				margin-right:.5rem;
+				font-size:1rem;
+				background:#d9f0ee;
+				color:#00496B;
+				display:inline-block;
+				transition:all .6s ease-in;
+				cursor:pointer;
+				font-weight:600;
+				&:hover {
+					background:#00496B;
+					color:#fff;
+				}
+			}
+
+			span.visible {
+				background:#00496B;
+				color:#fff;
+
+			}
+		}
+
+		.lcwp-admin__section {
+			background:#d9f0ee;
+			padding:1rem;
+			display:none;
+		}
+
+		.lcwp-admin__section.visible {
+			display:block;
+		}
+	}
+
+	.btn.add_tags {
+		width:auto;
+		display:inline-block;
+	}
+
+	ul.tags_list {
+		display:flex;
+		flex-flow:row wrap;
+		li {
+			margin:.5rem;
+			width:calc(33.33% - 2rem);
+			background:$adminBlue;
+
+			span, form {
+				padding:1rem;
+			}
+
+			span {
+				display:inline-block;
+				font-size:1.5rem;
+				font-weight:700;
+			}
+
+			form {
+				input[type="submit"] {
+					width:100%;
+					background:$orange;
+					border:solid thin transparent;
+					padding:.5rem 0;
+					border-radius:4px;
+					color:#fff;
+					font-weight:400;
+					font-size:1.2rem;
+				}
+			}
+		}
+	}
+
+}
+
+.lcwp-calendar__featured-events {
+
+	form.hidden {
+		display:none;
+	}
+
+	form {
+		display:flex;
+		flex-flow:row wrap;
+		justify-content:top;
+		align-items: top;
+		position:relative;
+		padding-top:8rem;
+
+		h2 {
+			width:100%;
+			color:$seafoam;
+		}
+
+		fieldset.submit {
+			width:100%;
+			position:absolute;
+			top:0;
+			right:0;
+			padding:0 1rem 0 2rem;
+			text-align:right;
+			background:$adminBlue;
+			-webkit-box-shadow: 0 17px 5px -7px rgba(0,0,0,0.5);
+			-moz-box-shadow:  0 17px 5px -7px rgba(0,0,0,0.5);
+			box-shadow: 0 17px 5px -7px rgba(0,0,0,0.5);
+
+			input[type="submit"] {
+				background:$seafoam;
+				padding:.5rem 1rem;
+				color:#fff;
+				border-radius:24px;
+				border:solid thin transparent;
+				margin:1rem;
+				transition:background .6s ease-in;
+
+				&:hover {
+					background:$adminBlue;
+					color:$seafoam;
+					border:solid thin $seafoam;
+				}
+			}
+		}
+
+		fieldset.submit.fixed {
+			position:fixed;
+			top:31px;
+		}
+
+		fieldset.featured_event {
+			width:calc(33.33% - 3rem);
+			background:$adminBlue;
+			margin:1.5rem;
+			-webkit-box-shadow: 0 17px 5px -7px rgba(0,0,0,0.5);
+			-moz-box-shadow:  0 17px 5px -7px rgba(0,0,0,0.5);
+			box-shadow: 0 17px 5px -7px rgba(0,0,0,0.5);
+			position:relative;
+
+			.event_title {
+				color:$seafoam;
+				font-size:1.2rem;
+				font-weight:700;
+				margin-bottom:.5rem;
+				padding:1rem;
+			}
+
+			.event_date {
+				color:$orange;
+				font-size:1.1rem;
+				margin-bottom:.5rem;
+				padding:1rem;
+			}
+			.checkbox {
+				padding:1rem;
+				background:$seafoam;
+				color:#fff;
+				text-align:center;
+				font-weight:700;
+				font-size:1.1rem;
+			}
+			.featured_image {
+				max-width:100%;
+				height:200px;
+				background-repeat:no-repeat;
+				background-position:center center;
+				background-size:cover;
+			}
+		}
+	}
+
+	form.delete_events {
+		
+		fieldset.event_delete {
+			width:calc(33.33% - 1rem);
+			margin:.5rem;
+			background:$adminBlue;
+			overflow:hidden;
+			span {	
+				display:block;
+				margin-bottom:1rem;
+				padding:.5rem
+			}
+			.title {
+				color:$pink;
+				margin-bottom:.5rem;
+				font-weight:700;
+				font-size:1rem;
+			}
+			.date {
+				font-weight:400;
+				font-size:1rem;
+			}
+			label {
+				background:$seafoam;
+				color:#fff;
+				display:block;
+				width:100%;
+				text-align:center;
+				font-weight:700;
+				padding:.5rem;
+				font-size:1rem;
+				input {
+					margin-left:.5rem;
+				}
+			}
+		}
+		fieldset.submit {
+				width:100%
+		}
+	}
+}
+
+.loading {
+		text-align:center;
+		position:fixed;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		background:rgba(255,255,255,.8);
+		font-size:3rem;
+		color:$pink;
+		display:flex;
+		flex-flow:column nowrap;
+		justify-content:center;
+		align-items:center;
+
+		.loader {
+			border:solid 16px $pink;
+			border-radius:50%;
+			border-top: solid 16px $orange;
+			width:120px;
+			height:120px;
+			-webkit-animation:spin 2s linear infinite;
+			animation:spin 2s linear infinite;
+		}
+
+		@-webkit-keyframes spin {
+			0% {-webkit-transform:rotate(0deg);}
+			100% { -webkit-transform: rotate(360deg); }
+		}
+
+		@keyframes spin {
+			0% {transform:rotate(0deg);}
+			100% {transform: rotate(360deg);}
+		}
+}
+
+.view-selected-events, .select-events {
+	display:inline-block;
+	padding:.5rem 1rem;
+	background:$seafoam;
+	font-size:1.2rem;
+	color:#fff;
+	margin-right:1rem;
+	margin-bottom:-.5rem;
+	cursor:pointer;
+	letter-spacing:1px;
+
+}
+
+.view-selected-events.selected, .select-events.selected {
+	background:$adminBlue;
+	color:$seafoam;
+}
+
+input[type="text"].feed_name {
+	padding:.25rem;
+	height:30px;
+	border-radius:4px;
+	width:300px;
+}
+
+button.delete_old_events {
+	display:block;
+	margin:1rem 0;
+	padding:.5rem;
+	background:$pink;
+	border:solid thin transparent;
+	color:#fff;
+	border-radius:4px;
+	transition:background .6s ease-in;
+
+	&:hover {
+		background:red;
+	}
+}
+
+.feed_list {
+	padding:0 2rem;
+
+	.list {
+		li {
+			padding:1rem;
+			background:#fff;
+			margin-bottom:0;
+			&:nth-child(even) {
+				background:$adminBlue;
+			}
+		}
+
+		span, button {
+			display:inline-block;
+			margin-right:.5rem;
+		}
+
+		button {
+			padding:.25rem .5rem;
+			border-radius:4px;
+			border:solid thin transparent;
+			transition:background .6s ease-in;
+			transition:color .6s ease-in;
+
+		}
+
+		.feed_title {
+			font-size:1.2rem;
+			color:$seafoam;
+			font-weight:700;
+			margin-right:2rem;
+		}
+
+		button.delete_feed {
+			background:$pink;
+			color:#fff;
+			&:hover {
+				background:red;
+			}
+		}
+		button.edit_feed {
+			background:$seafoam;
+			color:#fff;
+			&:hover {
+				background:#fff;
+				color:$seafoam;
+				border:solid thin $seafoam;
+			}
+		}
+	}
+}

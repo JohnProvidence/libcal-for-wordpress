@@ -1,0 +1,43 @@
+// variables and mixins
+
+$pink: #EC008B;
+$magenta: #B10269;
+$orange: #F89C27;
+$drkorange: #E58307;
+$limegreen: #A6CE38;
+$drkgrey: #27282A;
+$seafoam: #32BCAD;
+$drkseafoam: #008B7F;
+$adminBlue: #d9f0ee;
+
+
+// mixins 
+
+$laptop: "(max-width:1500px)";
+$tablet-landscape: "(max-width:1024px)";
+$tablet-portrait: "(max-width:800px)";
+$mobile: "(max-width:750px)";
+
+@mixin laptop {
+	@media #{$laptop} {
+		@content;
+	}
+}
+
+@mixin tablet-landscape {
+	@media #{$tablet-landscape} {
+		@content;
+	}
+}
+
+@mixin tablet-portrait {
+	@media #{$tablet-portrait} {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media #{$mobile} {
+		@content;
+	}
+}
